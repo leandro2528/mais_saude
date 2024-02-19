@@ -27,4 +27,32 @@ class MedicoController extends Controller
         Medico::create($request->all());
         return redirect()->route('medicos-index');
     }
+
+    public function edit($id) {
+        $medicos = Medico::findOrFail($id);
+        $departamentos = Departamento::all();
+        return view('medicos.edit', ['medicos'=>$medicos, 'departamentos'=>$departamentos]);
+    }
+
+    public function update(Request $request, $id) {
+        $request->validate([
+            'nome' => 'required',
+            'email' => 'required',
+            'senha' => 'required',
+            'endereco' => 'required',
+            'telefone' => 'required',
+            'departamento_id' => 'required'
+        ]);
+        $medicos = Medico::findOrFail($id);
+        $medicos->update($request->all());
+
+        return redirect()->route('medicos-index');
+    }
+
+    public function destroy($id) {
+        $medicos = Medico::findOrFail($id);
+        $medicos->delete();
+
+        return redirect()->route('medicos-index');
+    }
 }

@@ -36,6 +36,9 @@ Route::prefix('medicos')->group(function() {
     Route::get('/', [MedicoController::class, 'index'])->name('medicos-index');
     Route::get('/create', [MedicoController::class, 'create'])->name('medicos-create');
     Route::post('/', [MedicoController::class, 'store'])->name('medicos-store');
+    Route::get('/{id}/edit', [MedicoController::class, 'edit'])->where('id', '[0-9]+')->name('medicos-edit');
+    Route::put('/{id}', [MedicoController::class, 'update'])->where('id', '[0-9]+')->name('medicos-update');
+    Route::delete('{id}', [MedicoController::class, 'destroy'])->where('id', '[0-9]+')->name('medicos-destroy');
 });
 
 

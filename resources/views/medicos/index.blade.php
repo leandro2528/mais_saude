@@ -35,7 +35,7 @@
     
     <div class="row">
         <div class="card-body">
-            
+            @if(count($medicos))
             <table class="table table-bordrred table- hover">
                 <thead style="font-size: 14px; color: #777;">
                     <tr>
@@ -46,6 +46,7 @@
                         <th>Endereço</th>
                         <th>Telefone</th>
                         <th>Departamento</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody style="font-size: 12px; color: #777;">
@@ -58,12 +59,25 @@
                         <td>{{ $medico->endereco }}</td>
                         <td>{{ $medico->telefone }}</td>
                         <td>{{ $medico->departamento->nome }}</td>
-                       
+                        <td class="d-flex">
+                            <a class="btn btn-warning btn-sm" href="{{ route('medicos-edit', ['id'=>$medico->id]) }}"><i class="fa-solid fa-pencil"></i></a>
+                            <form action="{{ route('medicos-destroy', ['id'=>$medico->id]) }}" method="POST">
+                                @csrf
+                                @method('delete')
+                                <button class="btn btn-danger btn-sm ms-2">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </form>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-          
+            @else
+            <div class="alert alert-info">
+                Não possui médicos cadastrados nessa tabela
+            </div>
+            @endif
         </div>
     </div>
 
