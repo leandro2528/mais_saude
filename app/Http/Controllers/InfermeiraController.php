@@ -27,7 +27,17 @@ class InfermeiraController extends Controller
 
     public function create() {
         $infermeiras = Infermeira::all();
-        return view('infermeiras.create', ['infermeiras'=>$infermeiras]);
+
+        $totalMedicos = Medico::count();
+        $totalInfermeiras = Infermeira::count();
+        $totalPacientes = Paciente::count();
+        return view('infermeiras.create', 
+        [
+            'infermeiras'=>$infermeiras,
+            'totalMedicos'=>$totalMedicos,
+            'totalInfermeiras'=>$totalInfermeiras,
+            'totalPacientes'=>$totalPacientes
+        ]);
     }
 
     public function store(Request $request) {
@@ -37,7 +47,17 @@ class InfermeiraController extends Controller
 
     public function edit($id) {
         $infermeiras = Infermeira::where('id', $id)->first();
-        return view('infermeiras.edit', ['infermeiras'=>$infermeiras]);
+
+        $totalMedicos = Medico::count();
+        $totalInfermeiras = Infermeira::count();
+        $totalPacientes = Paciente::count();
+        return view('infermeiras.edit', 
+        [
+            'infermeiras'=>$infermeiras,
+            'totalMedicos'=>$totalMedicos,
+            'totalInfermeiras'=>$totalInfermeiras,
+            'totalPacientes'=>$totalPacientes
+        ]);
     }
 
     public function update(Request $request, $id) {

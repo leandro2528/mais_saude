@@ -58,7 +58,7 @@
                         <td>{{ $paciente->nome }}</td>
                         <td>{{ $paciente->email }}</td>
                         <td>{{ $paciente->senha }}</td>
-                        <td>{{ $paciente->endreco }}</td>
+                        <td>{{ $paciente->endereco }}</td>
                         <td>{{ $paciente->telefone }}</td>
                         <td>{{ $paciente->sexo->nome }}</td>
                         <td>{{ $paciente->data_nascimento }}</td>

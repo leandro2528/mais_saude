@@ -36,7 +36,19 @@ class PacienteController extends Controller
         $pacientes = Paciente::all();
         $sexos = Sexo::all();
         $gruposangues = Gruposangue::all();
-        return view('pacientes.create', ['pacientes'=>$pacientes, 'sexos'=>$sexos, 'gruposangues'=>$gruposangues]);
+
+        $totalMedicos = Medico::count();
+        $totalInfermeiras = Infermeira::count();
+        $totalPacientes = Paciente::count();
+        return view('pacientes.create',
+        [
+            'pacientes'=>$pacientes, 
+            'sexos'=>$sexos, 
+            'gruposangues'=>$gruposangues,
+            'totalMedicos'=>$totalMedicos,
+            'totalInfermeiras'=>$totalInfermeiras,
+            'totalPacientes'=>$totalPacientes
+        ]);
     }
 
     public function store(Request $request) {
@@ -60,7 +72,19 @@ class PacienteController extends Controller
         $pacientes = Paciente::findOrFail($id);
         $sexos = Sexo::all();
         $gruposangues = Gruposangue::all();
-        return view('pacientes.edit', ['pacientes'=>$pacientes, 'sexos'=>$sexos, 'gruposangues'=>$gruposangues]);
+
+        $totalMedicos = Medico::count();
+        $totalInfermeiras = Infermeira::count();
+        $totalPacientes = Paciente::count();
+        return view('pacientes.edit', 
+        [
+            'pacientes'=>$pacientes, 
+            'sexos'=>$sexos, 
+            'gruposangues'=>$gruposangues, 
+            'totalMedicos'=>$totalMedicos,
+            'totalInfermeiras'=>$totalInfermeiras,
+            'totalPacientes'=>$totalPacientes
+        ]);
     }
 
     public function update(Request $request, $id) {

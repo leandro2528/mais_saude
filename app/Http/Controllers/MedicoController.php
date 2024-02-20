@@ -31,7 +31,17 @@ class MedicoController extends Controller
     public function create() {
         $medicos = Medico::all();
         $departamentos = Departamento::all();
-        return view('medicos.create', ['medicos'=>$medicos, 'departamentos'=>$departamentos]);
+        $totalMedicos = Medico::count();
+        $totalInfermeiras = Infermeira::count();
+        $totalPacientes = Paciente::count();
+        return view('medicos.create', 
+        [
+            'medicos'=>$medicos, 
+            'departamentos'=>$departamentos,
+            'totalMedicos'=>$totalMedicos,
+            'totalInfermeiras'=>$totalInfermeiras,
+            'totalPacientes'=>$totalPacientes
+        ]);
     }
 
     public function store(Request $request) {
@@ -42,7 +52,18 @@ class MedicoController extends Controller
     public function edit($id) {
         $medicos = Medico::findOrFail($id);
         $departamentos = Departamento::all();
-        return view('medicos.edit', ['medicos'=>$medicos, 'departamentos'=>$departamentos]);
+
+        $totalMedicos = Medico::count();
+        $totalInfermeiras = Infermeira::count();
+        $totalPacientes = Paciente::count();
+        return view('medicos.edit', 
+        [
+            'medicos'=>$medicos, 
+            'departamentos'=>$departamentos,
+            'totalMedicos'=>$totalMedicos,
+            'totalInfermeiras'=>$totalInfermeiras,
+            'totalPacientes'=>$totalPacientes
+        ]);
     }
 
     public function update(Request $request, $id) {
