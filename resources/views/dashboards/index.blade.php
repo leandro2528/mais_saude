@@ -8,18 +8,24 @@
         <h4 class="">Painel Inícial</h4>
         <div class="row">
             <div class="col-12 d-flex justify-content-between my-2">
-                <div class="card p-2" style="width: 160px; background-color: #F8F8FF;">
-                    <div class="card-icon"><i class="fa-solid fa-stethoscope"  style="color: #008B8B;font-size: 30px;"></i></div>
-                    <div class="card-title" style="font-size: 12px;">Médicos</div>
-                </div>
-                <div class="card p-2" style="width: 160px; background-color: #F8F8FF;">
-                    <div class="card-icon"><i class="fa-solid fa-user" style="color: #008B8B;font-size: 30px;"></i></div>
-                    <div class="card-title" style="font-size: 12px;">Parcientes</div>
-                </div>
-                <div class="card p-2" style="width: 160px; background-color: #F8F8FF;">
-                    <div class="card-icon"><i class="fa-solid fa-notes-medical" style="color: #008B8B; font-size: 30px;"></i></div>
-                    <div class="card-title" style="font-size: 12px;">Infermeira(o)s</div>
-                </div>
+                <a href="{{ route('medicos-index') }}">
+                    <div class="card p-2" style="width: 160px; background-color: #F8F8FF;">
+                        <div class="card-icon"><i class="fa-solid fa-stethoscope"  style="color: #008B8B;font-size: 30px;"></i></div>
+                        <div class="card-title" style="font-size: 12px;">Médicos</div>
+                    </div>
+                </a>
+                <a href="{{ route('pacientes-index') }}">
+                    <div class="card p-2" style="width: 160px; background-color: #F8F8FF;">
+                        <div class="card-icon"><i class="fa-solid fa-user" style="color: #008B8B;font-size: 30px;"></i></div>
+                        <div class="card-title" style="font-size: 12px;">Parcientes</div>
+                    </div>
+                </a>
+                <a href="{{ route('infermeiras-index') }}">
+                    <div class="card p-2" style="width: 160px; background-color: #F8F8FF;">
+                        <div class="card-icon"><i class="fa-solid fa-notes-medical" style="color: #008B8B; font-size: 30px;"></i></div>
+                        <div class="card-title" style="font-size: 12px;">Infermeira(o)s</div>
+                    </div>
+                </a>
                 <div class="card p-2" style="width: 160px; background-color: #F8F8FF;">
                     <div class="card-icon"><i class="fa-solid fa-hand-holding-medical" style="color: #008B8B;font-size: 30px;"></i></div>
                     <div class="card-title" style="font-size: 12px;">Farmaceutico(o)s</div>
