@@ -15,11 +15,11 @@
             </div>
             <div class="title-info-medico d-flex flex-column align-items-center">
                 <span style="color: #999;">Infermeiras</span>
-                <span style="color: blue;"><h5>00</h5></span>
+                <span style="color: blue;"><h5>0{{ $totalInfermeiras }}</h5></span>
             </div>
             <div class="title-info-medico d-flex flex-column align-items-center">
                 <span style="color: #999;">Parcientes</span>
-                <span style="color: red;"><h5>00</h5></span>
+                <span style="color: red;"><h5>0{{ $totalPacientes }}</h5></span>
             </div>
         </div>
     </div>

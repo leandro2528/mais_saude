@@ -3,13 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Models\Departamento;
+use App\Models\Infermeira;
+use App\Models\Medico;
+use App\Models\Paciente;
 
 class DepartamentoController extends Controller
 {
     public function index() {
         $departamentos = Departamento::all();
-        return view('departamentos.index', ['departamentos'=>$departamentos]);
+        $totalMedicos = Medico::count();
+        $totalInfermeiras = Infermeira::count();
+        $totalPacientes = Paciente::count();
+        return view('departamentos.index', 
+        [
+            'departamentos'=>$departamentos,
+            'totalMedicos'=>$totalMedicos,
+            'totalInfermeiras'=>$totalInfermeiras,
+            'totalPacientes'=>$totalPacientes
+        ]);
     }
 
     public function create() {

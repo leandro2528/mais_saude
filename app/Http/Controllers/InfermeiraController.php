@@ -5,12 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Infermeira;
+use App\Models\Medico;
+use App\Models\Paciente;
 
 class InfermeiraController extends Controller
 {
     public function index() {
         $infermeiras = Infermeira::all();
-        return view('infermeiras.index', ['infermeiras'=>$infermeiras]);
+        
+        $totalMedicos = Medico::count();
+        $totalInfermeiras = Infermeira::count();
+        $totalPacientes = Paciente::count();
+        return view('infermeiras.index',
+        [
+            'infermeiras'=>$infermeiras,
+            'totalMedicos'=>$totalMedicos,
+            'totalInfermeiras'=>$totalInfermeiras,
+            'totalPacientes'=>$totalPacientes
+        ]);
     }
 
     public function create() {

@@ -10,16 +10,16 @@
         </div>
         <div class="col-3  d-flex justify-content-between ">
             <div class="title-info-medico d-flex flex-column align-items-center">
-                <span>Médicos</span>
-                <span>00</span>
+                <span style="color: #999;">Médicos</span>
+                <span style="color: green;"><h5>0{{ $totalMedicos }}</h5></span>
             </div>
             <div class="title-info-medico d-flex flex-column align-items-center">
-                <span>Infermeiras</span>
-                <span>00</span>
+                <span style="color: #999;">Infermeiras</span>
+                <span style="color: blue;"><h5>0{{ $totalInfermeiras }}</h5></span>
             </div>
             <div class="title-info-medico d-flex flex-column align-items-center">
-                <span>Parcientes</span>
-                <span>00</span>
+                <span style="color: #999;">Parcientes</span>
+                <span style="color: red;"><h5>0{{ $totalPacientes }}</h5></span>
             </div>
         </div>
     </div>

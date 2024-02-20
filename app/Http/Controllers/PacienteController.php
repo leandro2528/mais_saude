@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Paciente;
 use App\Models\Sexo;
 use App\Models\Gruposangue;
+use App\Models\Medico;
+use App\Models\Infermeira;
 
 class PacienteController extends Controller
 {
@@ -14,7 +16,20 @@ class PacienteController extends Controller
         $pacientes = Paciente::orderBy('created_at', 'desc')->with('sexo', 'gruposangue')->get();
         $sexos = Sexo::all();
         $gruposangues = Gruposangue::all();
-        return view('pacientes.index', ['pacientes'=>$pacientes, 'sexos'=>$sexos, 'gruposangues'=>$gruposangues]);
+
+        $totalMedicos = Medico::count();
+        $totalInfermeiras = Infermeira::count();
+        $totalPacientes = Paciente::count();
+
+        return view('pacientes.index', 
+        [
+            'pacientes'=>$pacientes,
+            'sexos'=>$sexos,
+            'gruposangues'=>$gruposangues,
+            'totalMedicos'=>$totalMedicos,
+            'totalInfermeiras'=>$totalInfermeiras,
+            'totalPacientes'=>$totalPacientes
+        ]);
     }
 
     public function create() {

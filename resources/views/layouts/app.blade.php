@@ -15,7 +15,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="{{ route('dashboards-index') }}">MAIS SAÚDE</a>
+            <a class="navbar-brand ps-3" href="{{ route('dashboards-index') }}">SAÚDE</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -45,40 +45,41 @@
                         <div class="nav">
                             
                             <a class="nav-link" href="">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                LOGO
+                                <div class="sb-nav-link-icon">
+                                <i class="fa-solid fa-stethoscope" style="font-size: 40px;"></i>
+                                </div>
                             </a>
                             <div class="sb-sidenav-menu-heading">Menu Navegação</div>
                             <a class="nav-link" href="{{ route('departamentos-index') }}" style="font-size: 12px;">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-sitemap" style="color: #fff;font-size: 16px;"></i></div>
                                 Departamento
                             </a>
                             <a class="nav-link" href="{{ route('medicos-index') }}" style="font-size: 12px;">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-stethoscope"  style="color: #fff;font-size: 16px;"></i></div>
                                 Médico
                             </a>
                             <a class="nav-link" href="{{ route('pacientes-index') }}" style="font-size: 12px;">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-user" style="color: #fff;font-size: 16px;"></i></div>
                                 Parciente
                             </a>
                             <a class="nav-link" href="{{ route('infermeiras-index') }}" style="font-size: 12px;">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-notes-medical" style="color: #fff; font-size: 16px;"></i></div>
                                 Infermeira(o)
                             </a>
                             <a class="nav-link" href="" style="font-size: 12px;">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-flask-vial" style="color: #fff;font-size: 16px;"></i></div>
                                 Farmaceutico
                             </a>
                             <a class="nav-link" href="" style="font-size: 12px;">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i style="color: #fff;font-size: 16px;" class="fa-solid fa-pills"></i></div>
                                 Laboratório
                             </a>
                             <a class="nav-link" href="" style="font-size: 12px;">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-money-check-dollar" style="color: #fff;font-size: 16px;"></i></div>
                                 Contator(a)
                             </a>
                             <a class="nav-link collapsed" style="font-size: 12px;" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMonitorar" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                <div class="sb-nav-link-icon"><i style="color: #fff;font-size: 16px;" class="fa-solid fa-gears"></i></div>
                                 Monitorar Hospital
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
@@ -96,7 +97,7 @@
                                 </nav>
                             </div>
                             <a class="nav-link" href="" style="font-size: 12px;">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-user-plus" style="color: #fff;font-size: 16px;"></i></div>
                                 Perfil
                             </a>
                              

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Medico;
+use App\Models\Infermeira;
+use App\Models\Paciente;
 use App\Models\Departamento;
 
 class MedicoController extends Controller
@@ -12,9 +14,18 @@ class MedicoController extends Controller
     public function index() {
         $medicos = Medico::orderBy('created_at', 'desc')->with('departamento')->get();
         $departamentos = Departamento::all();
-
+        
         $totalMedicos = Medico::count();
-        return view('medicos.index', ['medicos'=>$medicos, 'departamentos'=>$departamentos, 'totalMedicos'=>$totalMedicos]);
+        $totalInfermeiras = Infermeira::count();
+        $totalPacientes = Paciente::count();
+        return view('medicos.index', 
+        [
+            'medicos'=>$medicos, 
+            'departamentos'=>$departamentos,
+            'totalMedicos'=>$totalMedicos,
+            'totalInfermeiras'=>$totalInfermeiras,
+            'totalPacientes'=>$totalPacientes
+        ]);
     }
 
     public function create() {
