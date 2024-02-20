@@ -35,7 +35,7 @@
     
     <div class="row">
         <div class="card-body">
-            
+            @if(count($compromissos))
             <table class="table table-bordrred table- hover">
                 <thead style="font-size: 14px; color: #777;">
                     <tr>
@@ -65,8 +65,11 @@
                     @endforeach
                 </tbody>
             </table>
-           
-            
+            @else
+            <div class="alert alert-info">
+                Não existem compromissos cadastrados nessa tabela
+            </div> 
+            @endif
         </div>
     </div>
 

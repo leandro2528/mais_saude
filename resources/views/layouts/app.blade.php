@@ -21,7 +21,7 @@
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <input class="form-control" type="text" placeholder="Pesquisar..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
                     <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                 </div>
             </form>
@@ -44,14 +44,14 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="{{ route('dashboards-index') }}">
                                 <div class="sb-nav-link-icon">
-                                <i class="fa-solid fa-stethoscope" style="font-size: 40px;"></i>
+                                    <i class="fa-solid fa-heart-pulse" style="font-size: 50px; color: #fff;"></i>
                                 </div>
                             </a>
                             <div class="sb-sidenav-menu-heading">Menu Navegação</div>
                             <a class="nav-link" href="{{ route('departamentos-index') }}" style="font-size: 12px;">
-                                <div class="sb-nav-link-icon"><i class="fa-solid fa-sitemap" style="color: #fff;font-size: 16px;"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-heart-pulse" style="color: #fff;font-size: 16px;"></i></div>
                                 Departamento
                             </a>
                             <a class="nav-link" href="{{ route('medicos-index') }}" style="font-size: 12px;">
@@ -111,12 +111,8 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
+                            <div class="text-muted">Copyright &copy; Desenvolvido por Leandro Carvalho 2024</div>
+                            
                         </div>
                     </div>
                 </footer>
