@@ -8,6 +8,7 @@ use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\InfermeiraController;
+use App\Http\Controllers\CompromissoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +60,16 @@ Route::prefix('/infermeiras')->group(function() {
     Route::get('/{id}/edit', [InfermeiraController::class, 'edit'])->where('id', '[0-9]+')->name('infermeiras-edit');
     Route::put('/{id}', [InfermeiraController::class, 'update'])->where('id', '[0-9]+')->name('infermeiras-update');
     Route::delete('/{id}', [InfermeiraController::class, 'destroy'])->where('id', '[0-9]+')->name('infermeiras-destroy');
+});
+
+Route::prefix('/compromissos')->group(function() {
+    Route::get('/', [CompromissoController::class, 'index'])->name('compromissos-index');
+    Route::get('/create', [CompromissoController::class, 'create'])->name('compromissos-create');
+    Route::post('/', [CompromissoController::class, 'store'])->name('compromissos-store');
+    Route::get('/{id}/edit', [CompromissoController::class, 'edit'])->where('id', '[0-9]+')->name('compromissos-edit');
+    Route::put('/{id}', [CompromissoController::class, 'update'])->where('id', '[0-9]+')->name('compromissos-update');
+    Route::delete('/{id}', [CompromissoController::class, 'destroy'])->where('id', '[0-9]+')->name('compromissos-destroy');
+
 });
 
 

@@ -85,7 +85,7 @@
                             </a>
                             <div class="collapse" id="collapseMonitorar" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="" style="font-size: 10px;">Ver Compomissos</a>
+                                    <a class="nav-link" href="{{ route('compromissos-index') }}" style="font-size: 10px;">Ver Compomissos</a>
                                     <a class="nav-link" href="" style="font-size: 10px;">Ver Pagamentos</a>
                                     <a class="nav-link" href="" style="font-size: 10px;">Ver estados da cama</a>
                                     <a class="nav-link" href="" style="font-size: 10px;">Ver Banco de Sangue</a>
