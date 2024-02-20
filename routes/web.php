@@ -7,7 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\PacienteController;
-
+use App\Http\Controllers\InfermeiraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +50,15 @@ Route::prefix('pacientes')->group(function() {
     Route::get('/{id}/edit', [PacienteController::class, 'edit'])->where('id', '[0-9]+')->name('pacientes-edit');
     Route::put('/{id}', [PacienteController::class, 'update'])->where('id', '[0-9]+')->name('pacientes-update');
     Route::delete('/{id}', [PacienteController::class, 'destroy'])->where('id', '[0-9]+')->name('pacientes-destroy');
+});
+
+Route::prefix('/infermeiras')->group(function() {
+    Route::get('/', [InfermeiraController::class, 'index'])->name('infermeiras-index');
+    Route::get('/create', [InfermeiraController::class, 'create'])->name('infermeiras-create');
+    Route::post('/', [InfermeiraController::class, 'store'])->name('infermeiras-store');
+    Route::get('/{id}/edit', [InfermeiraController::class, 'edit'])->where('id', '[0-9]+')->name('infermeiras-edit');
+    Route::put('/{id}', [InfermeiraController::class, 'update'])->where('id', '[0-9]+')->name('infermeiras-update');
+    Route::delete('/{id}', [InfermeiraController::class, 'destroy'])->where('id', '[0-9]+')->name('infermeiras-destroy');
 });
 
 

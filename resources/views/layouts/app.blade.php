@@ -61,7 +61,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Parciente
                             </a>
-                            <a class="nav-link" href="" style="font-size: 12px;">
+                            <a class="nav-link" href="{{ route('infermeiras-index') }}" style="font-size: 12px;">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Infermeira(o)
                             </a>
