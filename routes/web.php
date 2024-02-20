@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\MedicoController;
+use App\Http\Controllers\PacienteController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +41,15 @@ Route::prefix('medicos')->group(function() {
     Route::get('/{id}/edit', [MedicoController::class, 'edit'])->where('id', '[0-9]+')->name('medicos-edit');
     Route::put('/{id}', [MedicoController::class, 'update'])->where('id', '[0-9]+')->name('medicos-update');
     Route::delete('{id}', [MedicoController::class, 'destroy'])->where('id', '[0-9]+')->name('medicos-destroy');
+});
+
+Route::prefix('pacientes')->group(function() {
+    Route::get('/', [PacienteController::class, 'index'])->name('pacientes-index');
+    Route::get('/create', [PacienteController::class, 'create'])->name('pacientes-create');
+    Route::post('/', [PacienteController::class, 'store'])->name('pacientes-store');
+    Route::get('/{id}/edit', [PacienteController::class, 'edit'])->where('id', '[0-9]+')->name('pacientes-edit');
+    Route::put('/{id}', [PacienteController::class, 'update'])->where('id', '[0-9]+')->name('pacientes-update');
+    Route::delete('/{id}', [PacienteController::class, 'destroy'])->where('id', '[0-9]+')->name('pacientes-destroy');
 });
 
 
