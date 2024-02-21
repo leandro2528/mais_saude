@@ -129,18 +129,71 @@
                 <div class="card mb-4">
                     <div class="card-header">
                     <i class="fa-solid fa-calendar-days" style="color: #008B8B;font-size: 20px;"></i>
-                        Agenda do calendário
+                    Departamento
+                        
                     </div>
-                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                    <div class="card-body">
+                        @if(count($departamentos))
+                    <table class="table table-hover">
+                            <thead style="font-size: 10px;">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nome</th>
+                                    <th>Descrição</th>
+                                </tr>
+                            </thead>
+                            <tbody style="font-size: 10px;">
+                                @foreach($departamentos as $departamento)
+                                <tr>
+                                    <td>{{ $departamento->id }}</td>
+                                    <td>{{ $departamento->nome }}</td>
+                                    <td>{{ $departamento->descricao }}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        @else
+                        <div class="alert alert-info">
+                            Não exitem dados nessa tabela
+                        </div>
+                        @endif
+                    </div>
                 </div>
             </div>
             <div class="col-xl-6">
                 <div class="card mb-4">
                     <div class="card-header">
                     <i style="color: #008B8B;font-size: 20px;" class="fa-solid fa-newspaper"></i>
-                        Quadro de Notícia
+                        Notícias
                     </div>
-                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                    <div class="card-body">
+                        @if(count($departamentos))
+                    <table class="table table-hover">
+                            <thead style="font-size: 10px;">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nome</th>
+                                    <th>Notícia</th>
+                                    <th>Data / Hora</th>
+                                </tr>
+                            </thead>
+                            <tbody style="font-size: 10px;">
+                                @foreach($compromissos as $compromisso)
+                                <tr>
+                                    <td>{{ $compromisso->id }}</td>
+                                    <td>{{ $compromisso->nome }}</td>
+                                    <td>{{ $compromisso->noticia }}</td>
+                                    <td>{{ $compromisso->data_hora }}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        @else
+                        <div class="alert alert-info">
+                           Não existem dados nessa tabela
+                        </div>
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
